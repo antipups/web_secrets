@@ -1,0 +1,6 @@
+asgiref==3.5.0
+Django==4.0.4
+loguru==0.6.0
+PyMySQL==1.0.2
+python-dotenv==0.20.0
+sqlparse==0.4.2
