@@ -25,7 +25,7 @@ def create_signature(private_key: str) -> bytes:
                     'SHA-1')
 
 
-def check_signature(public_key: str, signature: bytes) -> str:
+def check_signature(public_key: str, signature: bytes) -> str | Exception:
     """
         Проверка сигнатуры
     :param public_key: публичный ключ пользователя
@@ -37,3 +37,17 @@ def check_signature(public_key: str, signature: bytes) -> str:
                              rsa.PublicKey.load_pkcs1(public_key.encode())))
     if verify:
         return public_key
+
+
+def check_keys_valid(private_key: str, public_key: str) -> bool | Exception:
+    """
+        Проверка ключей которые ввел пользователь, мб они битые
+    :param private_key:
+    :param public_key:
+    :return: истина если всё ок
+    """
+    sign = create_signature(private_key=private_key)
+    check_signature(public_key=public_key,
+                    signature=sign)
+    return True
+
