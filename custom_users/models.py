@@ -35,7 +35,7 @@ class MyUser(AbstractBaseUser):
         max_length=32,
         unique=True,
     )
-    public_key = models.TextField(max_length=4096)
+    private_key = models.TextField(max_length=4096)
     signature = models.BinaryField()
 
     is_active = models.BooleanField(default=True)
@@ -44,7 +44,7 @@ class MyUser(AbstractBaseUser):
     objects = MyUserManager()
 
     USERNAME_FIELD = 'login'
-    REQUIRED_FIELDS = ['login', 'public_key']
+    REQUIRED_FIELDS = ['login', 'private_key']
 
     def __str__(self):
         return self.login

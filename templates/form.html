@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+
+
+<form
+        method="post"
+        {% if upload_file %}enctype="multipart/form-data"{% endif %}
+        {% if next_url %}action="{{ next_url }}"{% endif %}
+        class="shadow_border"
+        novalidate
+>
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+    {% for field in form %}
+        <div class="row">
+            <div class="title_row {% if field.errors %}error_field_label swing{% endif %}">
+                {{ field.label }}
+            </div>
+            <div class="field_value {% if field.errors %}error_field swing{% endif %}">
+                {{ field }}
+            </div>
+            <div class="errors">
+                {{ field.errors }}
+            </div>
+        </div>
+    {% endfor %}
+
+    <input type="submit">
+</form>

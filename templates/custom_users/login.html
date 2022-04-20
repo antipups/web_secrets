@@ -1,0 +1,10 @@
+{% extends 'simple_create_form.html' %}
+{% load static %}
+
+{% block extra_buttons %}
+    <link rel="stylesheet" href="{% static 'css/custom_users/login.css' %}">
+    <div class="reg_info shadow_border">
+        <p>Не имеете учетной записи?</p>
+        <a class="shadow_border" href="{% url 'custom_users:signup' %}">Зарегистируйтесь 😊</a>
+    </div>
+{% endblock %}

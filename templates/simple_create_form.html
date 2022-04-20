@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block page_title %}
+    {{ tab_title }}
+{% endblock %}
+
+
+{% block body %}
+{#    {% include 'breadcrumbs.html' %}#}
+
+    {% include 'form.html' %}
+
+    {% block extra_buttons %}
+
+    {% endblock %}
+{% endblock %}

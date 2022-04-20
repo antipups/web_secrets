@@ -13,13 +13,13 @@ from services import RSA_keys_manipulate
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    private_key = forms.CharField(label='Private Key',
+    public_key = forms.CharField(label='Public Key',
                                   max_length=10240,
                                   widget=forms.Textarea)
 
     class Meta:
         model = MyUser
-        fields = ('login', 'public_key')
+        fields = ('login', 'private_key')
 
     def clean_private_key(self):
         private_key = self.cleaned_data.get("private_key")
@@ -67,10 +67,10 @@ class UserAdmin(BaseUserAdmin):
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
     readonly_fields = ['signature']
-    list_display = ('login', 'public_key', 'signature', 'is_admin')
+    list_display = ('login', 'private_key', 'signature', 'is_admin')
     list_filter = ('is_admin',)
     fieldsets = (
-        (None, {'fields': ('login', 'public_key', 'signature')}),
+        (None, {'fields': ('login', 'private_key', 'signature')}),
         ('Permissions', {'fields': ('is_admin',)}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin

@@ -1,0 +1,6 @@
+.blue_button {
+    cursor: pointer;
+    color: inherit;
+    background-color: #00A1FF;
+    padding: 5px 20px;
+}

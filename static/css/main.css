@@ -1,0 +1,91 @@
+/*@font-face {*/
+/*    font-family: SF Pro Text;*/
+/*    src: url("../fonts/SF-Pro-Text-Black.otf") format("opentype");*/
+/*}*/
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif !important;
+    background-color: #FAFAFA;
+    /*background: #000000 url('../images/earth.jpg') no-repeat 0 0 scroll;*/
+    color: #3B3F5C;
+    font-weight: 500;
+    overflow-x: hidden;
+    /*background-color: #373737;*/
+
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+    height: fit-content;
+    padding-bottom: 150px;
+    /*width: 95vw;*/
+}
+
+.back {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 10vw;
+    /*max-width: 10vw;*/
+    height: 110vh;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    top: 0;
+    transition: 1s;
+}
+
+
+.back:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 15vw;
+}
+
+
+.back_url {
+    width: 100%;
+    text-decoration: none;
+    color: #F9C941;
+    text-align: center;
+    margin-top: 75px;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    transition: 1s;
+}
+
+
+.back_url:hover {
+    opacity: 1;
+}
+
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-top: 5px solid #F9C941;
+    border-right: 5px solid #F9C941;
+    /*margin-right: 30px;*/
+}
+
+.arrow-left {
+    transform: rotate(-135deg);
+}
+
+
+@media (max-width: 800px) {
+    .back {
+        display: none;
+    }
+}

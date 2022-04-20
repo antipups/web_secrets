@@ -1,0 +1,33 @@
+{% extends 'simple_create_form.html' %}
+{% load static %}
+
+{% block extra_buttons %}
+    <link rel="stylesheet" href="{% static 'css/custom_users/register.css' %}">
+
+    <div id="key_info" class="key_info shadow_border">
+        <p>Если вы не знаете правил генерирования ключей, можете воспользоваться кнопкой ниже, вам сразу предоставиться 2 ключа которые вы сможете использовать в системе, ключи будут сгенерированы случайно</p>
+        <div class="key_generate blue_button shadow_border">Сгенерировать ключи 🔑</div>
+        <div class="keys">
+            <p class="help">(Кликните на ключ чтобы скопировать)</p>
+            <div class="public_key___info shadow_border">
+                <p class="public_key___suggestion">
+                    Данный ключ необходимо сохранить, так как по нему будет проходить авторизация
+                </p>
+                <div class="public_key shadow_border">{{ public_key }}</div>
+            </div>
+            <div class="private_key shadow_border">{{ private_key }}</div>
+            <div class="keys___paste_keys blue_button shadow_border">
+                Скопировать ключи в поля ввода 📝,<br>а публичный ключ скопировать в буфер обмена ⌨️
+            </div>
+        </div>
+    </div>
+
+    <div class="keys_popup shadow_border">
+        <span class="close"></span>
+        <p class="keys_popup___text">
+            Ключ успешно скопирован! ☺️
+        </p>
+    </div>
+
+    <script src="{% static 'js/custom_users/register.js' %}"></script>
+{% endblock %}

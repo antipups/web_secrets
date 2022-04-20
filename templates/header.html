@@ -1,0 +1,107 @@
+{% load static %}
+
+<div class="header">
+{#    <div class="left_menu">#}
+{#        <div class="one_part">#}
+{#            <a class="one_menu_part" href="{% url 'projects:main' %}">#}
+{#                <img class="header_ico" src="{% static 'icons/home.svg' %}" alt="">#}
+{#                Home#}
+{#            </a>#}
+{#        </div>#}
+{#        {% if not not_auth %}#}
+{#            <hr>#}
+{#            <div class="one_part dropdown_menu">#}
+{#                <a class="one_menu_part" href="{% url 'projects:projects_list' %}">#}
+{#                    <img class="header_ico" src="{% static 'icons/projects.svg' %}" alt="">#}
+{#                    Projects#}
+{#                    <ul class="projects_list header_dropdown_menu">#}
+{#                        <li>#}
+{#                            <a class="header_dropdown_menu_element" href="{% url 'dataloggers:main' %}">#}
+{#                                <img src="{% static 'icons/datalogger.svg' %}" class="header_ico header_dropdown_menu_element_ico" alt="">DataLoggers#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a class="header_dropdown_menu_element" href="{% url 'plots:main' %}">#}
+{#                                <img src="{% static 'icons/plot.svg' %}" class="header_ico header_dropdown_menu_element_ico" alt="">Plots#}
+{#                            </a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </a>#}
+{#            </div>#}
+{#        {% endif %}#}
+{##}
+{#        <hr>#}
+{##}
+{#        <div class="one_part dropdown_menu">#}
+{#            <a class="one_menu_part" href="{% url 'static_content:impress' %}">#}
+{#                <img class="header_ico" src="{% static 'icons/impress.svg' %}" alt="">#}
+{#                Impress#}
+{#            </a>#}
+{#        </div>#}
+{##}
+{#        <hr>#}
+{##}
+{#        <div class="one_part dropdown_menu">#}
+{#            <a class="one_menu_part" href="{% url 'static_content:contact_us' %}">#}
+{#                <img class="header_ico" src="{% static 'icons/contact us.svg' %}" alt="">#}
+{#                Contact Us#}
+{#            </a>#}
+{#        </div>#}
+{##}
+{#        {% if admin %}#}
+{#            <hr>#}
+{#            <div class="one_part dropdown_menu">#}
+{#                <a class="one_menu_part" href="{% url 'admin_panel:main' %}">#}
+{#                    <img class="header_ico" src="{% static 'icons/admin_settings.svg' %}" alt="">#}
+{#                    Admin Setting#}
+{#                    <ul class="projects_list header_dropdown_menu">#}
+{#                        <li>#}
+{#                            <a class="header_dropdown_menu_element" href="{% url 'admin_panel:main' %}">#}
+{#                                <img src="{% static 'icons/notifications.svg' %}" class="header_ico header_dropdown_menu_element_ico" alt="">Notifications#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li style="margin-top: 10px">#}
+{#                            <a class="header_dropdown_menu_element" href="{% url 'admin_panel:users_work' %}">#}
+{#                                <img src="{% static 'icons/users.svg' %}" class="header_ico header_dropdown_menu_element_ico" alt="">Users#}
+{#                            </a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </a>#}
+{#            </div>#}
+{#        {% endif %}#}
+{#    </div>#}
+{##}
+{#    <div class="right_menu">#}
+{##}
+{#        {% if not_auth %}#}
+{##}
+{#           <div class="profile_button">#}
+{#               <a href="{% url 'users_work:login' %}" class="profile_button" style="text-decoration: none; color: #e0e6ed;">#}
+{#                   <img class="header_ico" src="{% static 'icons/profile.svg' %}" style="margin-right: 10px" alt="">#}
+{#                   <p>Login / Registration</p>#}
+{#               </a>#}
+{#            </div>#}
+{##}
+{#        {% else %}#}
+{##}
+{#            <div class="profile_button"><img class="header_ico" src="{% static 'icons/profile.svg' %}" style="margin-right: 10px" alt="">#}
+{#                <p>Profile#}
+{#                    <ul class="profile_menu header_dropdown_menu">#}
+{#                        <li>#}
+{#                            <a href="{% url 'users_work:logout' %}" class="header_dropdown_menu_element">#}
+{#                                <img class="header_ico header_dropdown_menu_element_ico" src="{% static 'icons/logout.svg' %}" alt="">Logout#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li style="margin-top: 10px">#}
+{#                            <a class="header_dropdown_menu_element" href="{% url 'users_work:account' %}">#}
+{#                                <img src="{% static 'icons/user.svg' %}" class="header_ico header_dropdown_menu_element_ico" alt="">User#}
+{#                            </a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </p>#}
+{#            </div>#}
+{##}
+{#        {% endif %}#}
+{##}
+{#    </div>#}
+</div>

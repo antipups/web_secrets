@@ -1,0 +1,96 @@
+.key_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    margin-top: 20px;
+}
+
+.key_info > p {
+    /*margin-right: 10px;*/
+    width: 80%;
+}
+
+/*.key_info > a {*/
+/*    text-decoration: none;*/
+/*    cursor: pointer;*/
+/*    color: inherit;*/
+/*    background-color: #00A1FF;*/
+/*    padding: 5px 20px;*/
+/*}*/
+
+.key_generate {
+
+}
+
+.keys {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.public_key, .private_key {
+    cursor: pointer;
+    text-align: center;
+}
+
+div.keys > p.help {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.keys_popup {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    background-color: #28C144;
+    color: white;
+    width: 300px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease 0.3s;
+    transform: translateX(+100%);
+    cursor: pointer;
+}
+
+
+.public_key___info {
+    margin: 20px 0;
+}
+
+
+.public_key___suggestion {
+    color: red;
+    text-align: center;
+}
+
+
+.keys_popup___text {
+    margin: 0;
+    padding: 0;
+}
+
+
+.open_popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+
+.keys___paste_keys {
+    margin-top: 20px;
+    width: fit-content;
+    text-align: center;
+}
+
+
+textarea {
+    height: 100px !important;
+}

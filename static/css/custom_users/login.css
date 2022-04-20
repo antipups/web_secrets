@@ -1,0 +1,19 @@
+.reg_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    margin-top: 20px;
+}
+
+.reg_info > p {
+    margin-right: 10px;
+}
+
+.reg_info > a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    background-color: #00A1FF;
+    padding: 5px 20px;
+}
