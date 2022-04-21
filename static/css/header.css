@@ -1,125 +1,30 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     background-color: #191E3A;
     min-height: 50px;
     width: 100%;
-    align-items: center;
     color: #e0e6ed;
-}
-
-.left_menu {
-    display: flex;
-    margin-left: 20px;
     align-items: center;
 }
 
-.left_menu > hr {
-    height: 30px;
-    /*align-self: flex-end;*/
-    margin: 0 10px 0 10px;
-    opacity: 0.3;
-}
-
-.right_menu {
-    display: flex;
-    flex-direction: row;
-    margin-right: 20px;
-}
-.right_menu > p {
-    margin: 0 10px 0 10px;
-}
-
-
-@media (max-width: 800px) {
-    .header {
-        justify-content: space-between;
-    }
-}
-
-
-.one_menu_part {
-    text-decoration: none;
-    color: #e0e6ed;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.one_menu_part > img {
-    margin-right: 2px;
-}
-
-.dropdown_menu {
-    padding: 20px 0 20px 0;
-}
-
-.dropdown_menu:hover .projects_list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-
-.header_dropdown_menu {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 1.5rem 4rem rgba(22,28,45,.15);
-    padding: 10px 20px;
-    display: none;
-    position: absolute;
-    list-style: none;
-}
-
-
-.header_dropdown_menu_element {
-    text-decoration: none;
-    font-size: 13px;
-    color: #3B3F5C;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-.header_dropdown_menu_element_ico {
-    margin-right: 5px;
-}
-
-
-.header_ico {
+.logout_icon {
     width: 25px;
     height: 25px;
 }
 
-.projects_list {
-    top: 40px;
-}
 
-
-.profile_button {
+.right_menu {
     display: flex;
-    position: relative;
-    margin-right: 20px;
     align-items: center;
-    /*padding-bottom: 20px;*/
 }
 
-
-.profile_button:hover .profile_menu {
+.logout_url {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-
-.profile_menu {
-    top: 30px;
-    width: 100%;
-}
-
-
-ul.projects_list > li {
-    margin-bottom: 5px;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #FAFAFA;
+    padding: 5px 10px !important;
+    margin-right: 10px;
 }

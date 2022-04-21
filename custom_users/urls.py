@@ -4,5 +4,6 @@ from custom_users import controllers, views
 
 urlpatterns = [
     path('login', controllers.auth, name='auth'),
-    path('singup', views.CreateUser.as_view(), name='signup')
+    path('singup', views.CreateUser.as_view(), name='signup'),
+    path('logout', controllers.logout, name='logout'),
 ]

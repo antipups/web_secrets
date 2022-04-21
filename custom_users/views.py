@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -8,7 +9,7 @@ from custom_users.forms import RegisterForm
 from services import RSA_keys_manipulate
 
 
-class CreateUser(CreateView):
+class CreateUser(LoginRequiredMixin, CreateView):
     model = MyUser
     template_name = 'custom_users/register.html'
     form_class = RegisterForm

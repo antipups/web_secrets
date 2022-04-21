@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block page_title %}
+    {{ tab_title }}
+{% endblock %}
+
+
+{% block body %}
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+    <link rel="stylesheet" href="{% static 'css/file_storage/file_list.css' %}">
+
+    <table class="files_table">
+        {% if files %}
+            <tr>
+                <th>Назва</th>
+                <th>Розмір</th>
+                <th>Дата Завантаження</th>
+            </tr>
+            {% for file in files %}
+                <tr>
+                    <td>
+                        {{ file.filename }}
+                    </td>
+                    <td>
+                        {{ file.filesize }} MB
+                    </td>
+                    <td>
+                        {{ file.upload_date }}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        {% else %}
+
+            <tr>
+                <td>
+                    Нет файлов
+                </td>
+            </tr>
+
+        {% endif %}
+        <tr>
+            <td colspan="3">
+                <div class="load_file">
+                    <form action="{% url 'file_storage:load_file' %}"
+                          enctype="multipart/form-data"
+                          method="post"
+                          novalidate>
+                        {% csrf_token %}
+                        <label for="file_load" class="label_file_load blue_button shadow_border">Завантажити файл</label>
+                        <input id="file_load" name="file_load" type="file">
+                        <input type="submit" class="blue_button shadow_border submit_file" disabled>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>const max_file_size = {{ max_file_size }}</script>
+    <script src="{% static 'js/file_storage/load_file.js' %}"></script>
+{% endblock %}

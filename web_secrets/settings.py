@@ -114,12 +114,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'uk-UA'
 
 
 LANGUAGES = (
     ('en', 'English'),
-    ('ru', 'Russian'),
+    ('uk', 'Ukraine'),
 )
 
 
@@ -154,3 +154,10 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'custom_users.backend.AuthBackend'
 ]
+
+
+PATH_TO_USERS_FILES = 'files'
+
+MAX_FILE_SIZE = 100 * 1024 * 1024
+
+LOGIN_URL = 'custom_users:auth'

@@ -1,0 +1,21 @@
+#file_load {
+    display: none;
+}
+
+/*.load_file > * {*/
+/*    font-size: 10px;*/
+/*}*/
+
+.submit_file, .label_file_load {
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+.label_file_load {
+
+}
+
+
+input[disabled] {
+    opacity: 0.5;
+}
