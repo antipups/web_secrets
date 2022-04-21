@@ -1,31 +1,34 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from services import RSA_keys_manipulate
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, login, public_key):
+    def create_user(self, login, private_key):
         """
         Creates and saves a User with the given login, and keys.
         """
 
         user = self.model(
             login=login,
-            public_key=public_key,
+            private_key=private_key,
         )
 
+        user.signature = RSA_keys_manipulate.create_signature(private_key=private_key)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, login, public_key):
+    def create_superuser(self, login, private_key, password):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
         user = self.create_user(
             login=login,
-            public_key=public_key,
+            private_key=private_key,
         )
         user.is_admin = True
+        user.signature = RSA_keys_manipulate.create_signature(private_key=private_key)
         user.save(using=self._db)
         return user
 
@@ -38,13 +41,13 @@ class MyUser(AbstractBaseUser):
     private_key = models.TextField(max_length=4096)
     signature = models.BinaryField()
 
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
 
     objects = MyUserManager()
 
     USERNAME_FIELD = 'login'
-    REQUIRED_FIELDS = ['login', 'private_key']
+    REQUIRED_FIELDS = ['private_key']
 
     def __str__(self):
         return self.login

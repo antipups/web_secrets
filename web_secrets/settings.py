@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+
+
 from config import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from services.RSA_keys_manipulate import check_signature
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -143,3 +147,10 @@ LOCALE_PATHS = (
     # 'locale',
     os.path.join(BASE_DIR, 'locale'),
 )
+
+AUTH_USER_MODEL = 'custom_users.MyUser'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'custom_users.backend.AuthBackend'
+]
