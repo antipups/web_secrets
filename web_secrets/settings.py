@@ -161,3 +161,7 @@ PATH_TO_USERS_FILES = 'files'
 MAX_FILE_SIZE = 100 * 1024 * 1024
 
 LOGIN_URL = 'custom_users:auth'
+
+MEDIA_URL = '/files/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'files')

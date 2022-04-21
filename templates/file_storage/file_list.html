@@ -20,22 +20,42 @@
             {% for file in files %}
                 <tr>
                     <td>
-                        {{ file.filename }}
+                        <a href="{% url 'file_storage:file' file.id %}">{{ file.filename }}</a>
                     </td>
                     <td>
-                        {{ file.filesize }} MB
+                        <a href="{% url 'file_storage:file' file.id %}">{{ file.filesize }} MB</a>
                     </td>
                     <td>
-                        {{ file.upload_date }}
+                        <a href="{% url 'file_storage:file' file.id %}">{{ file.upload_date }}</a>
                     </td>
                 </tr>
             {% endfor %}
+
+            {% if page_obj.paginator.num_pages > 1 %}
+
+                <tr>
+                    <td>
+                        {% if page_obj.has_previous %}
+                            <a class="paginator_url" href="?page={{ page_obj.previous_page_number }}">⏪</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ page_obj.number }} з {{ page_obj.paginator.count }}
+                    </td>
+                    <td>
+                        {% if page_obj.has_next %}
+                            <a class="paginator_url" href="?page={{ page_obj.next_page_number }}">⏩</a>
+                        {% endif %}
+                    </td>
+                </tr>
+
+            {% endif %}
 
         {% else %}
 
             <tr>
                 <td>
-                    Нет файлов
+                    Немає файлів
                 </td>
             </tr>
 

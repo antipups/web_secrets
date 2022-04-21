@@ -19,3 +19,15 @@
 input[disabled] {
     opacity: 0.5;
 }
+
+
+.paginator_url {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+td > a {
+    text-decoration: none;
+    color: #3B3F5C;
+}
