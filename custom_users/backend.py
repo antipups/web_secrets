@@ -20,6 +20,7 @@ class AuthBackend(ModelBackend):
 
         if users := MyUser.objects.filter(login=username):
             user = users[0]
+            pubkey = pubkey.replace('KEY----- ', 'KEY-----\n').replace(' -----END', '\n-----END')
 
             try:
                 check_signature(public_key=pubkey, signature=user.signature)
