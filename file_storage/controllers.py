@@ -1,8 +1,11 @@
+import os.path
+
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import redirect
 from django.http.response import HttpResponse, FileResponse
 
 from file_storage.models import File
+from web_secrets.settings import MEDIA_ROOT
 
 
 def load_file(request: WSGIRequest):
@@ -18,7 +21,7 @@ def download_file(request: WSGIRequest, file_id: int):
     if files := File.objects.filter(id=file_id):
         file = files[0]
         if request.user.is_admin or file.user == request.user:
-            return FileResponse(open(file.file.name, 'rb'),
+            return FileResponse(open(os.path.join(MEDIA_ROOT, file.file.name), 'rb'),
                                 filename=file.filename)
 
     return HttpResponse(status=404)

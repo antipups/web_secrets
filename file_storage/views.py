@@ -17,3 +17,6 @@ class FileList(LoginRequiredMixin, ListView):
         context_data['auth'] = True
         return context_data
 
+    def get_queryset(self):
+        return File.objects.filter(user=self.request.user)
+

@@ -9,7 +9,7 @@ from custom_users.forms import RegisterForm
 from services import RSA_keys_manipulate
 
 
-class CreateUser(LoginRequiredMixin, CreateView):
+class CreateUser(CreateView):
     model = MyUser
     template_name = 'custom_users/register.html'
     form_class = RegisterForm

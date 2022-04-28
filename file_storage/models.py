@@ -23,5 +23,5 @@ class File(models.Model):
         return mark_safe('<a href="/download_file/{0}">{1}</a>'
                          .format(self.id, self.filename))
 
-    fieldname_download.short_description = 'Завантажити файл'
+    fieldname_download.short_description = 'Завантажений файл'
 
